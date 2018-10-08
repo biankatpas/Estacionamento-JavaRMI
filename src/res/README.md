@@ -14,16 +14,6 @@ O processo servidor registrou um objeto distribuído que atua como um contador e
 1. Abra o projeto no Netbeans e clique sobre "Clean & Build"
 2. Pacotes `.jar` resultantes da compilação estarão no subdiretório `target`
 
-
-
-### Usando o maven no terminal
-
-1. Entre no diretório do projeto
-2. Digite: `mvn package`
-3. Pacotes `.jar` resultantes da compilação estarão no subdiretório `target`
-
-
-
 ## Instruções para execução dos exemplos no terminal
 
 1. Executando o servidor
