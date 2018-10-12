@@ -27,7 +27,7 @@ public class Estacionamento implements EstacionamentoDistribuido{
     }
 
     @Override
-    public int consultaValor() throws RemoteException
+    public int consultaValorAluguel() throws RemoteException
     {
         System.out.println("Consulta de valor");
         return 0;
@@ -41,7 +41,7 @@ public class Estacionamento implements EstacionamentoDistribuido{
     }
 
     @Override
-    public int consultaBicicletasEstacionamento() throws RemoteException
+    public int consultaBicicletasEstacionadas() throws RemoteException
     {
         System.out.println("Consulta de bicicletas no estacionamento");
         return 0;

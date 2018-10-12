@@ -39,11 +39,11 @@ public class Cliente {
             System.out.println("Registrando a devolução no servidor.");    
             stub.registraDevolucao();
             System.out.println("Solicitando ao servidor o valor a ser pago pelo aluguel.");
-            stub.consultaValor();
+            stub.consultaValorAluguel();
             System.out.println("Solicitando ao servidor quais bicicletas estão alugadas.");
             stub.consultaBicicletasAlugadas();
             System.out.println("Solicitando ao servidor quais bicicletas estão no estacionamento.");
-            stub.consultaBicicletasEstacionamento();
+            stub.consultaBicicletasEstacionadas();
             System.out.println("Fim da execução do cliente!");
 
         } catch (RemoteException | NotBoundException ex) {

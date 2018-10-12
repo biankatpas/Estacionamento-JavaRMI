@@ -16,8 +16,8 @@ public interface EstacionamentoDistribuido extends Remote{
 
     public void registraAluguel() throws RemoteException;
     public void registraDevolucao() throws RemoteException;
-    public int consultaValor() throws RemoteException;
+    public int consultaValorAluguel() throws RemoteException;
     public int consultaBicicletasAlugadas() throws RemoteException;
-    public int consultaBicicletasEstacionamento() throws RemoteException;
+    public int consultaBicicletasEstacionadas() throws RemoteException;
 
 }
