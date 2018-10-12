@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package res.server;
+package br.univali.estacionamento.rmi;
 
 /**
  *
  * @author biankatpas
  */
-import res.ContadorDistribuido;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -24,17 +23,17 @@ public class Servidor {
     // qual porta e qual o nome do objeto distribuído
     private static final String IPSERVIDOR = "127.0.0.1";
     private static final int PORTA = 1234;
-    private static final String NOMEOBJDIST = "MeuContador";
+    private static final String NOMEOBJDIST = "MeuEstacionamento";
 
     public static void main(String args[]){
         try {
             // Criando
-            Contador c = new Contador();
+            Estacionamento e = new Estacionamento();
 
             // Definindo o hostname do servidor
             System.setProperty("java.rmi.server.hostname", IPSERVIDOR);
 
-            ContadorDistribuido stub = (ContadorDistribuido) UnicastRemoteObject.exportObject(c, 0);
+            EstacionamentoDistribuido stub = (EstacionamentoDistribuido) UnicastRemoteObject.exportObject(e, 0);
 
             // Criando serviço de registro
             Registry registro = LocateRegistry.createRegistry(PORTA);
@@ -42,8 +41,8 @@ public class Servidor {
             // Registrando objeto distribuído
             registro.bind(NOMEOBJDIST, stub);
 
-            System.out.println("Servidor pronto!\n");
-            System.out.println("Pressione CTRL + C para encerrar...");
+            System.out.println("Servidor do estacionamento pronto!\n");
+            System.out.println("Pressione CTRL + C para encerrar...\n");
 
 
         } catch (RemoteException | AlreadyBoundException ex) {

@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.univali.estacionamento.rmi.server;
+package res;
 
 /**
  *
  * @author biankatpas
  */
-import br.univali.estacionamento.rmi.EstacionamentoDistribuido;
+import res.Contador;
+import res.ContadorDistribuido;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -24,17 +25,17 @@ public class Servidor {
     // qual porta e qual o nome do objeto distribuído
     private static final String IPSERVIDOR = "127.0.0.1";
     private static final int PORTA = 1234;
-    private static final String NOMEOBJDIST = "MeuEstacionamento";
+    private static final String NOMEOBJDIST = "MeuContador";
 
     public static void main(String args[]){
         try {
             // Criando
-            Estacionamento e = new Estacionamento();
+            Contador c = new Contador();
 
             // Definindo o hostname do servidor
             System.setProperty("java.rmi.server.hostname", IPSERVIDOR);
 
-            EstacionamentoDistribuido stub = (EstacionamentoDistribuido) UnicastRemoteObject.exportObject(e, 0);
+            ContadorDistribuido stub = (ContadorDistribuido) UnicastRemoteObject.exportObject(c, 0);
 
             // Criando serviço de registro
             Registry registro = LocateRegistry.createRegistry(PORTA);
@@ -42,7 +43,7 @@ public class Servidor {
             // Registrando objeto distribuído
             registro.bind(NOMEOBJDIST, stub);
 
-            System.out.println("Servidor do estacionamento pronto!\n");
+            System.out.println("Servidor pronto!\n");
             System.out.println("Pressione CTRL + C para encerrar...");
 
 

@@ -5,16 +5,20 @@
  */
 package br.univali.estacionamento.rmi;
 
+import java.io.Serializable;
+
 /**
  *
  * @author biankatpas
  */
-public class Bicicleta
+public class Bicicleta implements Serializable
 {
     private int id;
     private String descricao;
-    private String data;
-    private String hora;
+    private String dataAluguel;
+    private String horaAluguel;
+    private String dataDevolucao;
+    private String horaDevolucao;
     private boolean alugada;
 
     public Bicicleta()
@@ -25,8 +29,8 @@ public class Bicicleta
     {
         this.id = id;
         this.descricao = descricao;
-        this.data = data;
-        this.hora = hora;
+        this.dataAluguel = data;
+        this.horaAluguel = hora;
         this.alugada = alugada;
     }
 
@@ -51,26 +55,6 @@ public class Bicicleta
         this.descricao = descricao;
     }
 
-    public String getData()
-    {
-        return data;
-    }
-
-    public void setData(String data)
-    {
-        this.data = data;
-    }
-
-    public String getHora()
-    {
-        return hora;
-    }
-
-    public void setHora(String hora)
-    {
-        this.hora = hora;
-    }
-
     public boolean isAlugada()
     {
         return alugada;
@@ -79,6 +63,46 @@ public class Bicicleta
     public void setAlugada(boolean alugada)
     {
         this.alugada = alugada;
+    }
+
+    public String getDataDevolucao()
+    {
+        return dataDevolucao;
+    }
+
+    public void setDataDevolucao(String dataDevolucao)
+    {
+        this.dataDevolucao = dataDevolucao;
+    }
+
+    public String getHoraDevolucao()
+    {
+        return horaDevolucao;
+    }
+
+    public void setHoraDevolucao(String horaDevolucao)
+    {
+        this.horaDevolucao = horaDevolucao;
+    }
+
+    public String getDataAluguel()
+    {
+        return dataAluguel;
+    }
+
+    public void setDataAluguel(String dataAluguel)
+    {
+        this.dataAluguel = dataAluguel;
+    }
+
+    public String getHoraAluguel()
+    {
+        return horaAluguel;
+    }
+
+    public void setHoraAluguel(String horaAluguel)
+    {
+        this.horaAluguel = horaAluguel;
     }
         
 }
